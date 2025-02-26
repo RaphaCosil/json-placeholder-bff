@@ -6,38 +6,39 @@ import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class PostService {
+  private readonly apiUrl: string;
+
   constructor(
     private readonly httpService: HttpService, 
     private configService: ConfigService
-  ) {}
-  getApiKey(): string {
-    return this.configService.get<string>('API_KEY') ?? 'default_api_key';
+  ) {
+    this.apiUrl = this.configService.get<string>('API_KEY') ?? 'default_api_key';
   }
 
   async createPost(createPostDto: CreatePostDto) {
     const response = await firstValueFrom(
-      this.httpService.post(this.getApiKey + '/posts', createPostDto),
+      this.httpService.post(`${this.apiUrl}/posts`, createPostDto),
     );
     return response.data;
   }
 
   async getAllPosts() {
     const response = await firstValueFrom(
-      this.httpService.get(this.getApiKey + '/posts'),
+      this.httpService.get(`${this.apiUrl}/posts`),
     );
     return response.data;
   }
 
   async getPost(id: number) {
     const response = await firstValueFrom(
-      this.httpService.get(this.getApiKey + `/posts/${id}`),
+      this.httpService.get(`${this.apiUrl}/posts/${id}`),
     );
     return response.data;
   }
   
   async getPostsByUser(userId: number) {
     const response = await firstValueFrom(
-      this.httpService.get(this.getApiKey + `/users/${userId}/posts`),
+      this.httpService.get(`${this.apiUrl}/users/${userId}/posts`),
     );
     return response.data;
   }
