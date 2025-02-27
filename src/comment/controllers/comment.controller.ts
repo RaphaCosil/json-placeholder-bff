@@ -21,8 +21,8 @@ export class CommentController {
     return this.commentService.getCommentById(id);
   }
 
-  @Get('post/:postId')
-  async getCommentsByPost(@Param('postId') postId: number) {
-    return this.commentService.getCommentsByPostId(postId);
+  @Get('publication/:publicationId')
+  async getCommentsByPost(@Param('publicationId') publicationId: number) {
+    return this.commentService.getCommentsByPostId(publicationId);
   }
 }
