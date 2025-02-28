@@ -101,13 +101,3 @@ src/
    ```sh
    npm run start:dev
    ```
-
-## Testes
-Para rodar os testes unitários:
-```sh
-npm run test
-```
-Para rodar os testes e2e:
-```sh
-npm run test:e2e
-```
