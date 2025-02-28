@@ -88,15 +88,16 @@ src/
    npm install
    ```
 3. Configure environment variables:
-```sh
+   ```sh
    cp .env.example .env
    ```
 Edit the `.env` file and set `API_KEY` with the JSONPlaceholder API URL.
-5. Run the application:
+
+4. Run the application:
    ```sh
    npm run start
    ```
-6. To run in development mode:
+4. To run in development mode:
    ```sh
    npm run start:dev
    ```
