@@ -1,18 +1,26 @@
 # BFF NestJS com JSONPlaceholder
 
 ## Visão Geral
-Este é um projeto Backend for Frontend (BFF) desenvolvido com NestJS, que consome a API JSONPlaceholder para lidar com publicações e comentários. A aplicação está organizada em módulos separados para `comment` e `publication`.
+Este é um projeto Backend for Frontend (BFF) desenvolvido com NestJS, que consome a API JSONPlaceholder para lidar com publicações, comentários, álbuns e fotos. A aplicação está organizada em módulos separados para  `publication`, `comment`, `album` e `photo`.
 
 ## Tecnologias Utilizadas
 - [NestJS](https://nestjs.com/)
 - [Axios](https://github.com/axios/axios) para requisições HTTP
 - [RxJS](https://rxjs.dev/) para manipulação de requisições assíncronas
-- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) como API externa
 - [ConfigService](https://docs.nestjs.com/techniques/configuration) para gerenciamento de variáveis de ambiente
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) como API externa
 
 ## Estrutura do Projeto
 ```
 src/
+|-- publication/
+|   |-- controllers/        
+|   |-- dto/                
+|   |-- interfaces/        
+|   |-- mapper/             
+|   |-- services/          
+|   |-- publication.module.ts
+|
 |-- comment/
 |   |-- controllers/       
 |   |-- dto/                
@@ -21,13 +29,21 @@ src/
 |   |-- services/          
 |   |-- comment.module.ts  
 |
-|-- publication/
-|   |-- controllers/        
-|   |-- dto/                
+|-- album/
+|   |-- controllers/       
+|   |-- dto/               
 |   |-- interfaces/        
-|   |-- mapper/             
-|   |-- services/          
-|   |-- publication.module.ts
+|   |-- mapper/            
+|   |-- services/         
+|   |-- album.module.ts   
+|
+|-- photo/
+|   |-- controllers/       
+|   |-- dto/               
+|   |-- interfaces/        
+|   |-- mapper/            
+|   |-- services/         
+|   |-- photo.module.ts   
 |
 |-- app.module.ts           
 |-- main.ts                
@@ -48,6 +64,19 @@ src/
 - **GET `/comment`** - Buscar todos os comentários
 - **GET `/comment/:id`** - Buscar um comentário por ID
 - **GET `/comment/publication/:publicationId`** - Buscar comentários de uma publicação
+
+### Álbuns (`/album`)
+- **POST `/album`** - Criar um novo álbum
+- **GET `/album`** - Buscar todos os álbuns
+- **GET `/album/:id`** - Buscar um álbum por ID
+- **GET `/album/user/:userId`** - Buscar álbuns de um usuário
+
+### Fotos (`/photo`)
+- **POST `/photo`** - Criar uma nova foto
+- **GET `/photo`** - Buscar todas as fotos
+- **GET `/photo/:id`** - Buscar uma foto por ID
+- **GET `/photo/album/:albumId`** - Buscar fotos de um álbum
+
 
 ## Configuração e Execução
 1. Clone o repositório:
@@ -82,4 +111,3 @@ Para rodar os testes e2e:
 ```sh
 npm run test:e2e
 ```
-
