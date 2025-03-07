@@ -19,7 +19,7 @@ src/
 |   |-- interfaces/        
 |   |-- mapper/             
 |   |-- services/          
-|   |-- publication.module.ts
+|   └-- publication.module.ts
 |
 |-- comment/
 |   |-- controllers/       
@@ -27,7 +27,7 @@ src/
 |   |-- interfaces/       
 |   |-- mapper/             
 |   |-- services/          
-|   |-- comment.module.ts  
+|   └-- comment.module.ts  
 |
 |-- album/
 |   |-- controllers/       
@@ -35,7 +35,7 @@ src/
 |   |-- interfaces/        
 |   |-- mapper/            
 |   |-- services/         
-|   |-- album.module.ts   
+|   └-- album.module.ts   
 |
 |-- photo/
 |   |-- controllers/       
@@ -43,12 +43,12 @@ src/
 |   |-- interfaces/        
 |   |-- mapper/            
 |   |-- services/         
-|   |-- photo.module.ts   
+|   └-- photo.module.ts   
 |
 |-- app.module.ts           
 |-- main.ts                
 |
-|-- test/  
+└-- test/  
 ```
 
 ## Endpoints
