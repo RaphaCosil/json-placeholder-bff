@@ -1,4 +1,4 @@
-# BFF NestJS with JSONPlaceholder {...}
+# NestJS BFF (Backend for Frontent) with JSONPlaceholder {...}
 
 ## Overview
 
